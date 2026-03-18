@@ -1,0 +1,20 @@
+[
+  { "id": 1, "genero": "novela", "titulo": "Hamnet", "precio": 3500, "imagen": "img/hamnet.jpg" },
+
+  { "id": 2, "genero": "novela", "titulo": "Cien años de soledad", "precio": 4500, "imagen": "img/cien-anos-de-soledad.jpg" },
+
+  { "id": 3, "genero": "novela", "titulo": "Orgullo y prejuicio", "precio": 4000, "imagen": "img/orgullo-y-prejuicio.jpg" },
+
+  { "id": 4, "genero": "fantasia", "titulo": "El hobbit", "precio": 5000, "imagen": "img/el-hobbit.jpg" },
+
+  { "id": 5, "genero": "fantasia", "titulo": "Harry Potter y la Orden del Fénix", "precio": 5300, "imagen": "img/harry-potter.jpg" },
+
+  { "id": 6, "genero": "fantasia", "titulo": "Narnia: El leon, la bruja y el ropero", "precio": 4800, "imagen": "img/narnia.jpg" },
+
+  { "id": 7, "genero": "poesia", "titulo": "Sonetos", "precio": 3900, "imagen": "img/sonetos.jpg" },
+
+  { "id": 8, "genero": "poesia", "titulo": "El Cuervo", "precio": 3700, "imagen": "img/el-cuervo.jpg" },
+
+  { "id": 9, "genero": "poesia", "titulo": "Martin Fierro", "precio": 6000, "imagen": "img/martin-fierro.jpg" }
+
+]

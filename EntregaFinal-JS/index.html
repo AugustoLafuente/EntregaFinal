@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libreria Alexandra</title>
+</head>
+<body>
+    <h1>Libreria Alexandra</h1>
+    <p>Bienvenidos a la Libreria Alexandra. Explora nuestra amplia selección y descubre tu próxima lectura favorita.</p>
+
+    <section>
+        <h2>Seleccionar género</h2>
+        <select id="selectGenero">
+            <option value="">-- Seleccione --</option>
+            <option value="novela">Novela</option>
+            <option value="fantasia">Fantasía</option>
+            <option value="poesia">Poesía</option>
+        </select>
+    </section>
+
+    
+    <section>
+        <h2>Libros disponibles</h2>
+        <div id="contenedorLibros"></div>
+    </section>
+
+
+    <section>
+        <h2>Carrito</h2>
+        <div id="carrito"></div>
+        <p id="total"></p>
+        <input type="text" id="dniInput" placeholder="Ingresar DNI">
+        <button id="aplicarDescuento">Aplicar descuento</button>
+        <p id="mensajeDescuento"></p>
+        <button id="vaciarCarrito">Vaciar carrito</button>
+        <button id="finalizarCompra">Finalizar Compra</button>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="libreria2.js"></script>
+    
+</body>
+</html>
