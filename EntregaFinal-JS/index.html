@@ -4,39 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria Alexandra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Libreria Alexandra</h1>
-    <p>Bienvenidos a la Libreria Alexandra. Explora nuestra amplia selección y descubre tu próxima lectura favorita.</p>
 
-    <section>
-        <h2>Seleccionar género</h2>
-        <select id="selectGenero">
-            <option value="">-- Seleccione --</option>
-            <option value="novela">Novela</option>
-            <option value="fantasia">Fantasía</option>
-            <option value="poesia">Poesía</option>
-        </select>
-    </section>
+<body class="bg-light">
+    <header class="bg-dark text-white text-center py-4">
+        <h1>Libreria Alexandra📚</h1>
+        <p class="mb-0">Bienvenidos a la Libreria Alexandra. Explora nuestra amplia selección y descubre tu próxima lectura favorita.</p>
+    </header>
 
-    
-    <section>
-        <h2>Libros disponibles</h2>
-        <div id="contenedorLibros"></div>
-    </section>
+    <div class="container mt-4">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Seleccionar género</h5>
+                <select id="selectGenero" class="form-select">
+                    <option value="">-- Seleccione --</option>
+                    <option value="novela">Novela</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="poesia">Poesía</option>
+                </select>
+            </div>
+        </div>
+ 
+    <div class="row">
 
+        <!-- LIBROS -->
+        <div class="col-md-8">
+            <h3>Libros disponibles</h3>
+            <div id="contenedorLibros" class="d-flex flex-wrap justify-content-center"></div>
+        </div>
+        <!-- CARRITO -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title">🛒 Carrito</h4>
 
-    <section>
-        <h2>Carrito</h2>
-        <div id="carrito"></div>
-        <p id="total"></p>
-        <input type="text" id="dniInput" placeholder="Ingresar DNI">
-        <button id="aplicarDescuento">Aplicar descuento</button>
-        <p id="mensajeDescuento"></p>
-        <button id="vaciarCarrito">Vaciar carrito</button>
-        <button id="finalizarCompra">Finalizar Compra</button>
-    </section>
+                    <div id="carrito"></div>
 
+                    <h5 id="total" class="mt-3"></h5>
+
+                    <!-- DNI -->
+                    <input type="text" id="dniInput" class="form-control mt-2" placeholder="Ingresar DNI">
+                        <button id="aplicarDescuento" class="btn btn-primary w-100 mt-2">
+                            Aplicar descuento
+                        </button>
+                        <p id="mensajeDescuento" class="mt-2"></p>
+                    <!-- BOTONES -->
+                        <button id="vaciarCarrito" class="btn btn-warning w-100 mt-2">
+                            Vaciar carrito
+                        </button>
+
+                        <button id="finalizarCompra" class="btn btn-success w-100 mt-4">
+                            Finalizar compra
+                        </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="libreria2.js"></script>
     

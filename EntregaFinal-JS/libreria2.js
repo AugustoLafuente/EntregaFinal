@@ -81,20 +81,18 @@ function renderizarLibros(generoSeleccionado) {
 
         const div = document.createElement("div");
 
-        div.style.cssText = `
-            border:1px solid #ccc;
-            padding:10px;
-            margin:10px;
-            width:150px;
-            text-align:center;
-            display:inline-block;
-            vertical-align: top;
-        `;        
+        div.className = "m-2";
+
         div.innerHTML = `
-            <img src="${libro.imagen}" style="width:100px; height:150px; object-fit:cover; border-radius:5px;">
-            <p>${libro.titulo} - $${libro.precio}</p>
-            <button data-id="${libro.id}">Agregar</button>
-        `;
+            <div class="card mb-4 shadow-sm">
+                <img src="${libro.imagen}" class="card-img-top" style="height:250px; object-fit:cover;">
+                <div class="card-body text-center">
+                    <h6 class="card-title">${libro.titulo}</h6>
+                    <p class="card-text">$${libro.precio}</p>
+                    <button class="btn btn-success" data-id="${libro.id}">Agregar</button>
+                </div>
+            </div>
+`;
 
         contenedor.appendChild(div);
     });
@@ -216,9 +214,28 @@ function agregarAlCarrito(id) {
 // ======================================================
 
 function vaciarCarrito() {
+    if (carrito.length === 0) {
+        Swal.fire({
+            title: "Carrito vacío",
+            text: "No hay productos para eliminar",
+            icon: "info"
+        });
+        return;
+    }
+     Swal.fire({
+        title: "¿Estás seguro?",
+        text: "Se eliminarán todos los productos",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Sí, vaciar",
+        cancelButtonText: "Cancelar"
+    }).then(result => {
+        if (result.isConfirmed) {
     carrito = [];
     localStorage.removeItem("carrito");
     renderizarCarrito();
+    }
+});
 }
 
 // ======================================================
@@ -253,11 +270,26 @@ function restarCantidad(id) {
 function finalizarCompra() {
 
     if (carrito.length === 0) {
+        Swal.fire({
+            title: "Carrito vacío",
+            text: "Agregá productos antes de comprar",
+            icon: "info"
+        });
         return;
     }
 
-    carrito = [];
-    localStorage.removeItem("carrito");
+    Swal.fire({
+        title: "¿Confirmar compra?",
+        text: "¿Desea concluir la acción?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonText: "Comprar",
+        cancelButtonText: "Cancelar"
+    }).then(result => {
+        if (result.isConfirmed) {
+
+            carrito = [];
+            localStorage.removeItem("carrito");
 
     //Resetear descuento aplicado
     descuentoAplicado = 0;
@@ -272,14 +304,18 @@ function finalizarCompra() {
     document.getElementById("contenedorLibros").innerHTML = "";
   
 
-    renderizarCarrito();
+        renderizarCarrito();
 
-    Swal.fire({
-        title: "Compra realizada",
-        text: "Gracias por tu compra 📚",
-        icon: "success"
+            Swal.fire({
+            title: "Compra realizada",
+            text: "Gracias por tu compra 📚",
+            icon: "success"
+            });
+        }
     });
 }
+
+
 
 
 // ======================================================
